@@ -1,2 +1,13 @@
 # code-highlight
 code-highlight snippet api 
+
+
+https://rocket-sciance.github.io/code-snippet/?content=LmJveCB7CiAgICBiYWNrZ3JvdW5kOiByZWQ7CiAgICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgICB0b3A6IDBweDsKICAgIHJpZ2h0OiAwcHg7CiAgICBib3R0b206IDBweDsKICAgIGxlZnQ6IDBweDsKfQ==
+
+https://rocket-sciance.github.io/code-snippet/?style=base16/edge-dark&language=json&content=aHR0cHM6Ly9nZHJvaWQtc2VydmljZS5nbGVlemUuY29tL2FwaS9UZWFtL0V4ZWNMb2cvSWhteTUzdk9vWHdrcHFsLUV4ZWNMb2ctVnBzQ2hlY2stMjAyMzA1MDEtMTkzMA==
+
+http-server .    
+
+http://127.0.0.1:8080?content=LmJveCB7CiAgICBiYWNrZ3JvdW5kOiByZWQ7CiAgICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgICB0b3A6IDBweDsKICAgIHJpZ2h0OiAwcHg7CiAgICBib3R0b206IDBweDsKICAgIGxlZnQ6IDBweDsKfQ==
+
+http://127.0.0.1:8080?style=base16/edge-dark&language=json&content=aHR0cHM6Ly9nZHJvaWQtc2VydmljZS5nbGVlemUuY29tL2FwaS9UZWFtL0V4ZWNMb2cvSWhteTUzdk9vWHdrcHFsLUV4ZWNMb2ctVnBzQ2hlY2stMjAyMzA1MDEtMTkzMA==

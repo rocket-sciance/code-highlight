@@ -10,17 +10,25 @@
         pre, code {
             position: absolute;
             top: 0;
-            right: 0;
             bottom: 0;
             left: 0;
+            right: 0;
             margin: 0; 
             padding: 0;
-            width: 100%; height: 100%;
         }
         code {
             font-size: larger;
             font-weight: 500;
         }
+        @media screen and (min-width: 40px) 
+        {
+            
+        }
+        @media screen and (min-width: 400px)
+        {
+            
+        }
+        
     </style>
 </head>
 <body>
@@ -41,7 +49,7 @@
         const language = urlParams.get('language');
 
         const styleLink = `/code-snippet/libs/highlight/styles/${style}.min.css`;
-        const codeDecoded = atob(codeEncoded);
+        const codeDecoded = codeEncoded.startsWith("http") ? codeEncoded : atob(codeEncoded);
 
         console.log('codeEncoded', codeEncoded);
         console.log('codeDecoded', codeDecoded);
