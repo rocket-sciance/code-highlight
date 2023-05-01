@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre, code {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: 0; 
+            padding: 0;
+            width: 100%; height: 100%;
+        }
+        code {
+            font-size: larger;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Code block -->
+    <pre>
+        <code id="code"></code>
+    </pre>
+    
+    <!-- Initialize highlight.js -->
+    <link rel="stylesheet" href="/libs/highlight/styles/base16/atlas.min.css" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/libs/highlight/highlight.min.js"></script>
+    <script>
+    
+        const urlParams = new URLSearchParams(window.location.search);
+        const codeEncoded = urlParams.get('content');
+        const style = urlParams.get('style');
+        const language = urlParams.get('language');
+
+        const styleLink = `/libs/highlight/styles/${style}.min.css`;
+        const codeDecoded = atob(codeEncoded);
+
+        console.log('codeEncoded', codeEncoded);
+        console.log('codeDecoded', codeDecoded);
+        console.log('style', style);
+        console.log('styleLink', styleLink);
+        
+        const link  = document.createElement('link');
+        link.rel  = 'stylesheet';
+        link.href = styleLink;
+        link.type = 'text/css';
+        
+        const body  = document.getElementsByTagName('body')[0];
+        body.appendChild(link);
+
+        if (codeDecoded.startsWith("http")) {
+            axios.get('https://gdroid-service.gleeze.com/api/Team/ExecLog/Ihmy53vOoXwkpql-ExecLog-VpsCheck-20230501-1930').then(response =>{
+                console.log('data', response.data);
+
+                const codeElement = document.getElementById("code");
+                codeElement.innerHTML = JSON.stringify(response.data, null, 4);
+                codeElement.className = "hljs language-json";
+
+                if (language)
+                {
+                    codeElement.className = `hljs language-${language}`;    
+                }
+
+                hljs.highlightElement(codeElement);
+                hljs.initHighlightingOnLoad();
+
+            })
+        }
+        else {
+            document.getElementById("code").innerHTML = codeDecoded;
+
+            if (language)
+            {
+                codeElement.className = `hljs language-${language}`;    
+            }
+
+            hljs.initHighlightingOnLoad();
+        }
+    </script>
+</body>
+</html>
