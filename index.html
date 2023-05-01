@@ -29,9 +29,9 @@
     </pre>
     
     <!-- Initialize highlight.js -->
-    <link rel="stylesheet" href="/libs/highlight/styles/base16/atlas.min.css" type="text/css" />
+    <link rel="stylesheet" href="/code-snippet/libs/highlight/styles/base16/atlas.min.css" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/libs/highlight/highlight.min.js"></script>
+    <script src="/code-snippet/libs/highlight/highlight.min.js"></script>
     <script>
     
         const urlParams = new URLSearchParams(window.location.search);
@@ -39,7 +39,7 @@
         const style = urlParams.get('style');
         const language = urlParams.get('language');
 
-        const styleLink = `/libs/highlight/styles/${style}.min.css`;
+        const styleLink = `/code-snippet/libs/highlight/styles/${style}.min.css`;
         const codeDecoded = atob(codeEncoded);
 
         console.log('codeEncoded', codeEncoded);
@@ -56,7 +56,7 @@
         body.appendChild(link);
 
         if (codeDecoded.startsWith("http")) {
-            axios.get('https://gdroid-service.gleeze.com/api/Team/ExecLog/Ihmy53vOoXwkpql-ExecLog-VpsCheck-20230501-1930').then(response =>{
+            axios.get(codeDecoded).then(response =>{
                 console.log('data', response.data);
 
                 const codeElement = document.getElementById("code");
