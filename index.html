@@ -7,6 +7,28 @@
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <title>{} Snippet</title>
     <style>
+        /* width */
+        ::-webkit-scrollbar {
+        width: 8px;
+        }
+
+        ::-webkit-scrollbar {
+        height: 8px;
+        }
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #888888; 
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #555555; 
+        }
         pre, code {
             position: absolute;
             top: 0;
@@ -20,29 +42,52 @@
             font-size: larger;
             font-weight: 500;
         }
+        div {
+            position: absolute;
+            background-color: #f1f1f1;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            right: 1rem;
+            top: 1rem;
+            z-index: 1000;
+            opacity: .5;
+            text-align: center;
+            color: fff;
+            font-size: 1.5rem;
+        }
+        div > i {
+            margin-top: 0.7rem;
+        }
+        div:hover {
+            opacity: 0.8;
+            transition: 1000ms;
+            cursor: pointer;
+        }
         @media screen and (min-width: 40px) 
-        {
-            
+        {   
         }
         @media screen and (min-width: 400px)
-        {
-            
+        {   
         }
-        
     </style>
 </head>
 <body>
+    <div onclick="copy()">
+        <i class="fa-regular fa-copy"></i>
+    </div>
     <!-- Code block -->
     <pre>
         <code id="code"></code>
-    </pre>
-    
+    </pre>    
     <!-- Initialize highlight.js -->
-    <link rel="stylesheet" href="/code-snippet/libs/highlight/styles/base16/atlas.min.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="/code-snippet/libs/highlight/styles/base16/atlas.min.css" rel="stylesheet" type="text/css" />
     <script src="/code-snippet/libs/highlight/highlight.min.js"></script>
-    <script>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/f73dc3c8d3.js" crossorigin="anonymous"></script>
+
+<script>
         const urlParams = new URLSearchParams(window.location.search);
         const codeEncoded = urlParams.get('content');
         const style = urlParams.get('style');
@@ -56,20 +101,22 @@
         console.log('style', style);
         console.log('styleLink', styleLink);
         
+        const codeElement = document.getElementById("code");          
+        const body  = document.getElementsByTagName('body')[0];
+        
         const link  = document.createElement('link');
         link.rel  = 'stylesheet';
         link.href = styleLink;
-        link.type = 'text/css';
-        
-        const body  = document.getElementsByTagName('body')[0];
+        link.type = 'text/css';        
         body.appendChild(link);
 
         if (codeDecoded.startsWith("http")) {
             axios.get(codeDecoded).then(response =>{
                 console.log('data', response.data);
 
-                const codeElement = document.getElementById("code");
-                codeElement.innerHTML = JSON.stringify(response.data, null, 4);
+                const dataText = JSON.stringify(response.data, null, 4);
+
+                codeElement.innerHTML = dataText;
                 codeElement.className = "hljs language-json";
 
                 if (language)
@@ -83,14 +130,30 @@
             })
         }
         else {
-            document.getElementById("code").innerHTML = codeDecoded;
-
+            codeElement.innerHTML = codeDecoded;
+            
             if (language)
             {
                 codeElement.className = `hljs language-${language}`;    
             }
 
             hljs.initHighlightingOnLoad();
+        }
+
+        function copy() {
+            // get the container
+            const element = document.querySelector('#code');
+            // Create a fake `textarea` and set the contents to the text
+            // you want to copy
+            const storage = document.createElement('textarea');
+            storage.value = element.innerText;
+            element.appendChild(storage);
+
+            // Copy the text in the fake `textarea` and remove the `textarea`
+            storage.select();
+            storage.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+            element.removeChild(storage);
         }
     </script>
 </body>
