@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        iframe {
+            display: block;
+            border: none;
+            width: 60vw;
+            height: 300px;
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            background-color: #bbb;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .title {
+            height: 20px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 3px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .red {
+            background-color: #ef4646;
+        }
+
+        .golden {
+            background-color: #f4d02f;
+        }
+
+        .green {
+            background-color: #26d664;
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="title">
+            <span class="dot red"></span>
+            <span class="dot golden"></span>
+            <span class="dot green"></span>
+        </div>
+        <iframe src="https://rocket-sciance.github.io/code-snippet?language=json&content=ewogICAgInZwcyI6IHsKICAgICAgICAidWJ1bnR1QHVidW50dS0wMi5nbGVlemUuY29tIFtjb25uZWN0aW9uOiBzdWNjZXNzZnVsXSI6IHsKICAgICAgICAgICAgImVjaG8gZjZjOGM5MjEtNjMzNi00Y2I1LThmZTItNjQzNjU5MDQzNDM1IjogWwogICAgICAgICAgICAgICAgImY2YzhjOTIxLTYzMzYtNGNiNS04ZmUyLTY0MzY1OTA0MzQzNSIKICAgICAgICAgICAgXSwKICAgICAgICAgICAgInN0cmVzcyAtLWNwdSA0IC0taW8gNCAtLXZtIDIgLS12bS1ieXRlcyAxNjM4NE0gLS10aW1lb3V0IDEyN3MiOiBbCiAgICAgICAgICAgICAgICAic3RyZXNzOiBpbmZvOiBbMjQxODk4XSBkaXNwYXRjaGluZyBob2dzOiA0IGNwdSwgNCBpbywgMiB2bSwgMCBoZGQiLAogICAgICAgICAgICAgICAgInN0cmVzczogaW5mbzogWzI0MTg5OF0gc3VjY2Vzc2Z1bCBydW4gY29tcGxldGVkIGluIDEyOHMiCiAgICAgICAgICAgIF0KICAgICAgICB9LAogICAgICAgICJ1YnVudHVAbXlzcWwtMDEuZ2xlZXplLmNvbSBbY29ubmVjdGlvbjogc3VjY2Vzc2Z1bF0iOiB7CiAgICAgICAgICAgICJlY2hvIGNiNmU3ZmQ2LWQxNWEtNGFkZS04OTA5LTBmNWE5NzRkMjVhOSI6IFsKICAgICAgICAgICAgICAgICJjYjZlN2ZkNi1kMTVhLTRhZGUtODkwOS0wZjVhOTc0ZDI1YTkiCiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJzdHJlc3MgLS1jcHUgMiAtLWlvIDQgLS12bSAyIC0tdm0tYnl0ZXMgNTEyTSAtLXRpbWVvdXQgMTMzcyI6IFsKICAgICAgICAgICAgICAgICJzdHJlc3M6IGluZm86IFsyNjU5NTNdIGRpc3BhdGNoaW5nIGhvZ3M6IDIgY3B1LCA0IGlvLCAyIHZtLCAwIGhkZCIsCiAgICAgICAgICAgICAgICAic3RyZXNzOiBpbmZvOiBbMjY1OTUzXSBzdWNjZXNzZnVsIHJ1biBjb21wbGV0ZWQgaW4gMTM0cyIKICAgICAgICAgICAgXQogICAgICAgIH0sCiAgICAgICAgInVidW50dUBteXNxbC0wMi5nbGVlemUuY29tIFtjb25uZWN0aW9uOiBzdWNjZXNzZnVsXSI6IHsKICAgICAgICAgICAgImVjaG8gNmEzZWRjMWEtOWYyOC00OTQ4LThmYjItMjVjZTIyYWY5YzMxIjogWwogICAgICAgICAgICAgICAgIjZhM2VkYzFhLTlmMjgtNDk0OC04ZmIyLTI1Y2UyMmFmOWMzMSIKICAgICAgICAgICAgXSwKICAgICAgICAgICAgInN0cmVzcyAtLWNwdSAyIC0taW8gNCAtLXZtIDIgLS12bS1ieXRlcyA1MTJNIC0tdGltZW91dCAxMzZzIjogWwogICAgICAgICAgICAgICAgInN0cmVzczogaW5mbzogWzY3MjgwOV0gZGlzcGF0Y2hpbmcgaG9nczogMiBjcHUsIDQgaW8sIDIgdm0sIDAgaGRkIiwKICAgICAgICAgICAgICAgICJzdHJlc3M6IGluZm86IFs2NzI4MDldIHN1Y2Nlc3NmdWwgcnVuIGNvbXBsZXRlZCBpbiAxMzZzIgogICAgICAgICAgICBdCiAgICAgICAgfQogICAgfSwKICAgICJub3RpZnkiOiB7CiAgICAgICAgImh0dHBSZXNwb25zZSI6IHsKICAgICAgICAgICAgIm11bHRpY2FzdF9pZCI6IDY2NTk5NDExNTkwODcxNDEwMDAsCiAgICAgICAgICAgICJzdWNjZXNzIjogMywKICAgICAgICAgICAgImZhaWx1cmUiOiAwLAogICAgICAgICAgICAiY2Fub25pY2FsX2lkcyI6IDAsCiAgICAgICAgICAgICJyZXN1bHRzIjogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJtZXNzYWdlX2lkIjogImE1MTBmYmU2LTMzZDYtNDkxNS05MTAxLWIyZTM0ZWI5ZGIwMSIKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgIm1lc3NhZ2VfaWQiOiAiOGRlMzc1MTYtYWJiNS00ZjVkLTkwYzAtNDZkOTg0MDNhODM3IgogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAibWVzc2FnZV9pZCI6ICJjYjJiZWFiZC1kZmFjLTQ1N2YtYjdiMy00ODAwZDVjODI3NWEiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0KICAgICAgICB9LAogICAgICAgICJodHRwUmVxdWVzdCI6IHsKICAgICAgICAgICAgInJlZ2lzdHJhdGlvbl9pZHMiOiBbCiAgICAgICAgICAgICAgICAiY1JIWkxFWjJ0emhCU3FVd2RNNDNlODpBUEE5MWJHUjcwRmtwNTV3U0t1bXBpdW1GRkJUMXBXdHhlNUc5MG90VlhuM3BBZVlLZWIwVW1zRkZjZHpkZVQ3eHdpYk4xb3VkeXZEeVBoVWZtQnd5ZTVPSGNjcFlabE1PM25ZRnRXS2N3Qm1TS3VlLXFIUExpcXRfWkdRRHgyeVg3Q3lFX3lRTkl2cSIsCiAgICAgICAgICAgICAgICAiZk11Smp6ZFl3a3VrVGtzVnBOUVZwRzpBUEE5MWJFWUJlVUVaZFRYYmNmalhiRGdzTjhXRGxNMGJ4UXluVll4eUtjclJYcVJxVU1RSEk1LXN2cGwzaldWTTF0UlhROUVUNFVSZzRqdURreVhLQ3RiMDRUWlpMSWV3Z2k4NU5LRVdwQUt4Z01EQmZLMzJIWjlfZ1MtNTlaUWpNX3BTX1JMR0VpRSIsCiAgICAgICAgICAgICAgICAiZnlvRHlHdlpEeE9XVTZzeDEySEc2ZTpBUEE5MWJGU1RJTkRMUWlTSVl3VklQMEQ0cWZvX3FOb3E2NGFKRk94em9MQzV3N2N5MlN1NFg2ODJjOVVheEw5YzJjSDZNdmRUT0l0aW1JYXJFTHU0b2dGbmRpcXlJMjlfOXRJbWczZTd3QUhSdG9vc0VLa1ZTTldaaEVjZ2V5RnBSb2FlblluTnpSRCIKICAgICAgICAgICAgXSwKICAgICAgICAgICAgImRhdGEiOiB7CiAgICAgICAgICAgICAgICAidGl0bGUiOiAiR0Ryb2lkIOKAoiBTU0gg4oCiIDA3OjAwIEFFU1QiLAogICAgICAgICAgICAgICAgImJvZHkiOiAiMyBvdXQgb2YgMyBzZXJ2ZXJzIGNvbm5lY3RlZCBhbmQgb3BlcmF0ZWQgc3VjY2Vzc2Z1bGx5Li4uIiwKICAgICAgICAgICAgICAgICJpY29uIjogImh0dHBzOi8vZ2Ryb2lkLXNlcnZpY2UuZ2xlZXplLmNvbS9pbWcvaWNvbnMvY29uc29sZS1zdWNjZXNzLnBuZyIsCiAgICAgICAgICAgICAgICAiZGF0YSI6IHsKICAgICAgICAgICAgICAgICAgICAiZXhlY3V0aW9uUmFuZG9tSWQiOiAiZnFQN095ZzMySTVGcVNYIgogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICJ0YWciOiAiVnBzQ2hlY2stc3VjY2Vzc2Z1bCIsCiAgICAgICAgICAgICAgICAiYWN0aW9ucyI6IHsKICAgICAgICAgICAgICAgICAgICAiY2xpY2siOiAiaHR0cHM6Ly9yb2NrZXQtc2NpYW5jZS5naXRodWIuaW8vY29kZS1zbmlwcGV0P3N0eWxlPWJhc2UxNi9lZGdlLWRhcmsmbGFuZ3VhZ2U9anNvbiZjb250ZW50PWFIUjBjSE02THk5blpISnZhV1F0YzJWeWRtbGpaUzVuYkdWbGVtVXVZMjl0TDJGd2FTOVVaV0Z0TDBWNFpXTk1iMmN2Wm5GUU4wOTVaek15U1RWR2NWTllMVVY0WldOTWIyY3RWbkJ6UTJobFkyc3RNakF5TXpBMU1ETXRNVGt3TUE9PSIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgIH0sCiAgICAgICAgInVzZXJzIjogW10KICAgIH0KfQogICAg">
+        </iframe>
+    </div>
+
+    
+</body>
+</html>
